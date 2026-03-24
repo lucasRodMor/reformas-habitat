@@ -1,3 +1,4 @@
+/// <reference types="vite/client" />
 import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { motion, AnimatePresence } from 'motion/react';
