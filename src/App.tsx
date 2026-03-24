@@ -1,3 +1,4 @@
+/// <reference types="vite/client" />
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
@@ -24,6 +25,7 @@ import {
   User
 } from 'lucide-react';
 import { cn } from './lib/utils';
+import { ContactForm } from './components/ContactForm';
 
 // --- Types ---
 interface Service {
@@ -151,15 +153,13 @@ const Hero = () => (
         playsInline
         className="w-full h-full object-cover"
       >
-        <source src="/video-reforma.mp4" type="video/mp4" />
-        {/* Fallback image if video fails to load or file is not found yet */}
+        <source src="https://v1.pexels.com/video-files/4255018/4255018-uhd_2560_1440_25fps.mp4" type="video/mp4" />
         <img 
           src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1920" 
           alt="Luxury Interior" 
           className="w-full h-full object-cover"
         />
       </video>
-      {/* Dynamic overlay: darker on mobile, subtle gradient on desktop */}
       <div className="absolute inset-0 bg-black/40 md:bg-gradient-to-r md:from-white/90 md:via-white/40 md:to-transparent" />
     </div>
 
@@ -513,35 +513,8 @@ export default function App() {
             </div>
           </div>
           
-          <div className="flex-1 bg-white rounded-3xl p-8 text-zinc-900">
-            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-wider text-zinc-400">Nombre</label>
-                  <input type="text" className="w-full bg-zinc-50 border border-zinc-100 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-zinc-900/5" />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-wider text-zinc-400">Email</label>
-                  <input type="email" className="w-full bg-zinc-50 border border-zinc-100 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-zinc-900/5" />
-                </div>
-              </div>
-              <div className="space-y-2">
-                <label className="text-xs font-bold uppercase tracking-wider text-zinc-400">Tipo de Reforma</label>
-                <select className="w-full bg-zinc-50 border border-zinc-100 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-zinc-900/5">
-                  <option>General</option>
-                  <option>Cocina</option>
-                  <option>Baño</option>
-                  <option>Otros</option>
-                </select>
-              </div>
-              <div className="space-y-2">
-                <label className="text-xs font-bold uppercase tracking-wider text-zinc-400">Mensaje</label>
-                <textarea rows={4} className="w-full bg-zinc-50 border border-zinc-100 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-zinc-900/5" />
-              </div>
-              <button className="w-full bg-zinc-900 text-white py-4 rounded-xl font-bold hover:bg-zinc-800 transition-all">
-                Enviar Solicitud
-              </button>
-            </form>
+          <div className="flex-1">
+            <ContactForm />
           </div>
         </div>
       </section>
