@@ -528,7 +528,7 @@ export default function App() {
               <div className="space-y-2">
                 <label className="text-xs font-bold uppercase tracking-wider text-zinc-400">Tipo de Reforma</label>
                 <select className="w-full bg-zinc-50 border border-zinc-100 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-zinc-900/5">
-                  <option>Integral</option>
+                  <option>General</option>
                   <option>Cocina</option>
                   <option>Baño</option>
                   <option>Otros</option>
